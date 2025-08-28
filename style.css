@@ -3,7 +3,7 @@
   --cor-texto: #111111;
 }
 
-/* Ajustes gerais /
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -12,20 +12,20 @@ body {
   line-height: 1.6;
   font-size: 16px;
 
-  / Mantém footer no final /
+ 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
-  / Remove scroll lateral /
+ 
   overflow-x: hidden;
 }
 
 main {
-  flex: 1; / ocupa espaço entre header e footer /
+  flex: 1;
 }
 
-/ Menu centralizado /
+
 .menu {
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ main {
   background: #ddd;
 }
 
-/ Botões de acessibilidade /
+
 .acessibilidade {
   display: flex;
   justify-content: center;
@@ -63,20 +63,20 @@ main {
   border: 1px solid #ccc;
 }
 
-/ Banner separado /
+
 .banner {
   text-align: center;
 }
 
 .banner img {
   width: 100%;
-  max-width: 1200px; / garante que não estoura /
+  max-width: 1200px; 
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-/ Sessão Sobre /
+
 .sobre {
   background: url("https://i.imgur.com/nhpFGIp.jpeg") center/cover no-repeat;
   position: relative;
@@ -99,7 +99,7 @@ main {
   text-shadow: 1px 1px 3px #000;
 }
 
-/ Galeria /
+
 .galeria {
   text-align: center;
   padding: 40px 20px;
@@ -118,7 +118,7 @@ main {
   border-radius: 6px;
 }
 
-/ Contato /
+
 .contato {
   padding: 40px 20px;
   text-align: center;
@@ -149,7 +149,7 @@ form button:hover {
   background: #cc5200;
 }
 
-/ Footer */
+
 footer {
   background-color: #111;
   color: #fff;
