@@ -1,0 +1,160 @@
+--cor-principal: #ff6600; 
+  --cor-secundaria: #ffffff; 
+  --cor-texto: #111111;
+}
+
+/* Ajustes gerais /
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  font-size: 16px;
+
+  / Mantém footer no final /
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  / Remove scroll lateral /
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1; / ocupa espaço entre header e footer /
+}
+
+/ Menu centralizado /
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background: var(--cor-principal);
+  padding: 12px;
+}
+
+.menu button {
+  background: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.menu button:hover {
+  background: #ddd;
+}
+
+/ Botões de acessibilidade /
+.acessibilidade {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.acessibilidade button {
+  margin: 0 5px;
+  padding: 6px 10px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/ Banner separado /
+.banner {
+  text-align: center;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 1200px; / garante que não estoura /
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/ Sessão Sobre /
+.sobre {
+  background: url("https://i.imgur.com/nhpFGIp.jpeg") center/cover no-repeat;
+  position: relative;
+  padding: 60px 20px;
+}
+
+.sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.sobre-content {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/ Galeria /
+.galeria {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.grid-galeria img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/ Contato /
+.contato {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form textarea, form button {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: var(--cor-principal);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #cc5200;
+}
+
+/ Footer */
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+  width: 100%;
+}
