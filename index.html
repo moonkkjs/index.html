@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Acessível</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="acessibilidade.js"></script>
+</head>
+<body>
+  <!-- Menu no topo centralizado -->
+  <nav class="menu" aria-label="Menu principal">
+    <button onclick="location.href='#home'">Home</button>
+    <button onclick="location.href='#sobre'">Sobre</button>
+    <button onclick="location.href='#galeria'">Galeria</button>
+    <button onclick="location.href='#contato'">Contato</button>
+  </nav>
+
+  <!-- Botões de acessibilidade -->
+  <div class="acessibilidade" aria-label="Ferramentas de acessibilidade">
+    <button onclick="aumentarFonte()" aria-label="Aumentar fonte">A+</button>
+    <button onclick="diminuirFonte()" aria-label="Diminuir fonte">A-</button>
+    <button onclick="resetFonte()" aria-label="Resetar fonte">Resetar</button>
+  </div>
+
+  <!-- Banner separado -->
+  <header id="home" class="banner">
+    <img src="https://i.imgur.com/0T6yU1K.jpeg" alt="Banner do site">
+  </header>
+
+  <!-- Sessão Sobre -->
+  <section id="sobre" class="sobre">
+    <div class="sobre-content">
+      <h1>Sobre Nós</h1>
+      <p>
+        Roblox é um jogo online com milhares de estilos e para todas as plataformas digitais.
+        Tendo jogos de terror, suspense, jogos baseados em séries e filmes, entre vários gêneros.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sessão Galeria -->
+  <section id="galeria" class="galeria">
+    <h2>Galeria</h2>
+    <div class="grid-galeria">
+      <img src="https://i.imgur.com/7IVxU7B.jpeg" alt="Imagem 1">
+      <img src="https://i.imgur.com/WZKidXX.jpeg" alt="Imagem 2">
+      <img src="https://i.imgur.com/n4cLXsj.jpeg" alt="Imagem 3">
+      <img src="https://i.imgur.com/0JMSPfd.png" alt="Imagem 4">
+    </div>
+  </section>
+
+  <!-- Sessão Contato -->
+  <section id="contato" class="contato">
+    <h2>Estamos Contratando!</h2>
+    <p>Estamos procurando ajuda para continuar desenvolvendo nossos jogos e sites de fãs.
+    Se você gosta do que fazemos, junte-se a nós!</p>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 site de [nome aqui]. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
