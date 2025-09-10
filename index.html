@@ -8,7 +8,8 @@
   <!-- Importando fontes do Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Correção 3: Adicionada a fonte 'Lexend' para dislexia com os pesos corretos -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;700&family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,23 +18,16 @@
 </head>
 <body>
 
-
-  <!-- Header com Menu e Ferramentas de Acessibilidade -->
+  <!-- Header com Menu -->
   <header class="site-header">
     <nav class="menu" aria-label="Menu principal">
       <a href="#home">Home</a>
       <a href="#sobre">Sobre</a>
-      <a href="#noticias">Notícias</a>
       <a href="#guias">Guias</a>
       <a href="#galeria">Galeria</a>
+      <a href="#eventos">Eventos</a>
       <a href="#contato">Contato</a>
     </nav>
-    <div class="acessibilidade" aria-label="Ferramentas de acessibilidade">
-      <button onclick="aumentarFonte()" aria-label="Aumentar fonte">A+</button>
-      <button onclick="diminuirFonte()" aria-label="Diminuir fonte">A-</button>
-      <button onclick="resetarFonte()" aria-label="Resetar fonte">A</button>
-      <button id="theme-toggle" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
-    </div>
   </header>
   
   <!-- Tag <main> para todo o conteúdo principal -->
@@ -43,8 +37,8 @@
       <canvas id="particle-canvas"></canvas>
       <div class="banner-overlay"></div>
       <div class="banner-content">
-        <h1 class="animate-on-scroll">Universo Roblox</h1>
-        <p class="animate-on-scroll">Sua comunidade para os melhores jogos e novidades!</p>
+        <h1 class="animate-on-scroll readable-text">Universo Roblox</h1>
+        <p class="animate-on-scroll readable-text">Sua comunidade para os melhores jogos e novidades!</p>
         <a href="#galeria" class="btn-banner animate-on-scroll">Ver Jogos</a>
       </div>
       <div class="banner-shape shape-1"></div>
@@ -58,41 +52,37 @@
             <img src="https://t.ctcdn.com.br/p8ywrXNK5F2yB3elOQ4c_KZjNAo=/768x432/smart/i609512.jpeg" alt="Personagem do jogo The Rake do Roblox em uma floresta escura." onerror="this.onerror=null;this.src='https://placehold.co/500x500/1a202c/ffffff?text=Roblox';">
         </div>
         <div class="sobre-texto animate-on-scroll">
-          <h2>Sobre Nossa Comunidade</h2>
-          <p>
+          <h2 class="readable-text">Sobre Nossa Comunidade</h2>
+          <p class="readable-text">
             Roblox é uma plataforma online com milhares de jogos e estilos para todos os gostos. 
             Explore mundos de terror, suspense, aventura, jogos baseados em séries e filmes, e muito mais. Nossa paixão é criar e compartilhar as melhores experiências com a comunidade!
           </p>
-          <p>
+          <p class="readable-text">
             Aqui, você encontrará guias, novidades e uma galeria com os jogos mais populares do momento. Junte-se a nós e mergulhe em novas aventuras!
           </p>
         </div>
       </div>
     </section>
 
-    
-
-    
-
     <!-- Seção de Guias e Tutoriais -->
     <section id="guias" class="guias">
         <div class="container">
-            <h2 class="animate-on-scroll">Guias e Tutoriais</h2>
+            <h2 class="animate-on-scroll readable-text">Guias e Tutoriais</h2>
             <div class="grid-guias">
                 <a href="#" class="card-guia animate-on-scroll">
                     <div class="card-guia-icone"><i class="fas fa-book-open"></i></div>
-                    <h3>Guia Completo de 'The Mimic'</h3>
-                    <p>Todos os monstros, segredos e como sobreviver aos pesadelos do Livro IV.</p>
+                    <h3 class="readable-text">Guia Completo de 'The Mimic'</h3>
+                    <p class="readable-text">Todos os monstros, segredos e como sobreviver aos pesadelos do Livro IV.</p>
                 </a>
                 <a href="#" class="card-guia animate-on-scroll">
                     <div class="card-guia-icone"><i class="fas fa-running"></i></div>
-                    <h3>Top 5 Dicas para 'Evade'</h3>
-                    <p>Aprenda a usar os itens e a se movimentar como um profissional para nunca ser pego.</p>
+                    <h3 class="readable-text">Top 5 Dicas para 'Evade'</h3>
+                    <p class="readable-text">Aprenda a usar os itens e a se movimentar como um profissional para nunca ser pego.</p>
                 </a>
                 <a href="#" class="card-guia animate-on-scroll">
                     <div class="card-guia-icone"><i class="fas fa-gem"></i></div>
-                    <h3>Como Conseguir Itens Raros</h3>
-                    <p>Descubra os melhores métodos para obter itens limitados e exclusivos na plataforma.</p>
+                    <h3 class="readable-text">Como Conseguir Itens Raros</h3>
+                    <p class="readable-text">Descubra os melhores métodos para obter itens limitados e exclusivos na plataforma.</p>
                 </a>
             </div>
         </div>
@@ -101,7 +91,7 @@
     <!-- Seção Galeria -->
     <section id="galeria" class="galeria">
       <div class="container">
-        <h2 class="animate-on-scroll">Galeria de Jogos</h2>
+        <h2 class="animate-on-scroll readable-text">Galeria de Jogos</h2>
         <div class="grid-galeria">
           <div class="card-galeria animate-on-scroll" data-tilt>
               <img src="https://i.imgur.com/7IVxU7B.jpeg" alt="Imagem do jogo 'The Mimic' do Roblox." onerror="this.onerror=null;this.src='https://placehold.co/400x300/4a5568/ffffff?text=Jogo+1';">
@@ -126,30 +116,30 @@
     <!-- Seção Calendário de Eventos -->
     <section id="eventos" class="eventos">
         <div class="container">
-            <h2 class="animate-on-scroll">Calendário de Eventos</h2>
+            <h2 class="animate-on-scroll readable-text">Calendário de Eventos</h2>
             <div class="timeline">
                 <div class="timeline-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">29 AGO</div>
                     <div class="timeline-content">
-                        <h3>Live com Desenvolvedores</h3>
-                        <p>Sessão de Q&A com os criadores de 'Doors' no nosso canal do YouTube. Não perca!</p>
+                        <h3 class="readable-text">Live com Desenvolvedores</h3>
+                        <p class="readable-text">Sessão de Q&A com os criadores de 'Doors' no nosso canal do YouTube. Não perca!</p>
                     </div>
                 </div>
                 <div class="timeline-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">05 SET</div>
                     <div class="timeline-content">
-                        <h3>Torneio de 'BedWars'</h3>
-                        <p>Inscrições abertas para o nosso torneio comunitário. Prêmios incríveis para os vencedores!</p>
+                        <h3 class="readable-text">Torneio de 'BedWars'</h3>
+                        <p class="readable-text">Inscrições abertas para o nosso torneio comunitário. Prêmios incríveis para os vencedores!</p>
                     </div>
                 </div>
                 <div class="timeline-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">12 SET</div>
                     <div class="timeline-content">
-                        <h3>Lançamento: 'CyberCity 2088'</h3>
-                        <p>O aguardado RPG de mundo aberto finalmente será lançado. Estaremos cobrindo tudo ao vivo!</p>
+                        <h3 class="readable-text">Lançamento: 'CyberCity 2088'</h3>
+                        <p class="readable-text">O aguardado RPG de mundo aberto finalmente será lançado. Estaremos cobrindo tudo ao vivo!</p>
                     </div>
                 </div>
             </div>
@@ -159,8 +149,8 @@
     <!-- Seção Contato -->
     <section id="contato" class="contato">
       <div class="container contato-container animate-on-scroll">
-        <h2>Estamos Contratando!</h2>
-        <p>Amamos o que fazemos e estamos procurando novos talentos para desenvolver nossos jogos e sites de fãs. Se você é criativo e apaixonado por Roblox, junte-se a nós!</p>
+        <h2 class="readable-text">Estamos Contratando!</h2>
+        <p class="readable-text">Amamos o que fazemos e estamos procurando novos talentos para desenvolver nossos jogos e sites de fãs. Se você é criativo e apaixonado por Roblox, junte-se a nós!</p>
         <form>
           <div class="form-group">
             <input type="text" id="nome" name="nome" required placeholder=" ">
@@ -193,9 +183,9 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#noticias">Notícias</a></li>
           <li><a href="#guias">Guias</a></li>
           <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#eventos">Eventos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -213,9 +203,65 @@
     </div>
   </footer>
   
+  <!-- Painel de Acessibilidade -->
+  <button id="accessibility-panel-toggle" class="accessibility-fab" aria-label="Abrir painel de acessibilidade" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-universal-access"></i>
+  </button>
+  <aside id="accessibility-panel" class="accessibility-panel" hidden>
+      <header class="panel-header">
+          <h2>Acessibilidade</h2>
+          <button id="accessibility-panel-close" aria-label="Fechar painel de acessibilidade">
+              <i class="fas fa-times"></i>
+          </button>
+      </header>
+      <div class="panel-content">
+          <section class="panel-section" aria-labelledby="font-size-heading">
+              <h3 id="font-size-heading">Tamanho da Fonte</h3>
+              <div class="button-group">
+                  <button onclick="aumentarFonte()" aria-label="Aumentar fonte">A+</button>
+                  <button onclick="diminuirFonte()" aria-label="Diminuir fonte">A-</button>
+                  <button onclick="resetarFonte()" aria-label="Resetar fonte">A</button>
+              </div>
+          </section>
+          <section class="panel-section" aria-labelledby="theme-heading">
+              <h3 id="theme-heading">Modo de Cores</h3>
+              <div class="button-group-vertical">
+                  <button data-theme="default">
+                    <i class="fas fa-image"></i> Padrão
+                  </button>
+                  <button data-theme="dark-mode">
+                    <i class="fas fa-moon"></i> Escuro
+                  </button>
+                  <button data-theme="high-contrast">
+                    <i class="fas fa-adjust"></i> Alto Contraste
+                  </button>
+                  <button data-theme="monochrome">
+                    <i class="fas fa-palette"></i> Monocromático
+                  </button>
+              </div>
+          </section>
+           <section class="panel-section" aria-labelledby="reading-heading">
+              <h3 id="reading-heading">Leitura</h3>
+              <div class="button-group-vertical">
+                  <button id="dyslexia-font-toggle" aria-pressed="false">
+                    <i class="fas fa-font"></i> Fonte para Dislexia
+                  </button>
+                   <button id="text-reader-toggle" aria-pressed="false">
+                    <i class="fas fa-volume-up"></i> Ativar Leitor de Texto
+                  </button>
+              </div>
+          </section>
+      </div>
+  </aside>
+
+  <!-- Controles do Leitor de Texto -->
+  <div id="text-reader-controls" class="text-reader-controls" hidden>
+      <button id="reader-play" aria-label="Tocar"><i class="fas fa-play"></i></button>
+      <button id="reader-pause" aria-label="Pausar"><i class="fas fa-pause"></i></button>
+      <button id="reader-stop" aria-label="Parar"><i class="fas fa-stop"></i></button>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-
