@@ -1,5 +1,5 @@
 /* Importando fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;700&family=Lexend:wght@400;500;700&display=swap');
 
 /* Variáveis de Cores e Estilos */
 :root {
@@ -22,12 +22,67 @@
 
 /* Estilos para o Modo Noturno */
 body.dark-mode {
-    --cor-fundo: #1a202c;
-    --cor-fundo-secao-alternativa: #2d3748;
-    --cor-texto: #e2e8f0;
+    --cor-fundo: #121212;
+    --cor-fundo-secao-alternativa: #1e1e1e;
+    --cor-texto: #e0e0e0;
     --cor-texto-claro: #a0aec0;
     --sombra-caixa: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background-image: none;
 }
+
+/* Estilos para o Modo Alto Contraste */
+body.high-contrast {
+    --cor-principal: #ffff00;
+    --cor-secundaria: #00ffff;
+    --cor-fundo: #000000;
+    --cor-fundo-secao-alternativa: #000000;
+    --cor-texto: #ffffff;
+    --cor-texto-claro: #dddddd;
+    --cor-branco: #ffffff;
+    background-image: none !important;
+}
+.high-contrast h1, .high-contrast h2, .high-contrast h3, .high-contrast a, .high-contrast button {
+    color: #ffff00 !important;
+}
+.high-contrast *:not(.fas):not(.fab) {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    border-color: #ffff00 !important;
+}
+
+/* CORREÇÃO: Visibilidade do botão do banner em alto contraste */
+.high-contrast .btn-banner {
+    color: #000000 !important; /* Texto preto no botão amarelo */
+}
+
+/* CORREÇÃO: Visibilidade do botão de formulário em alto contraste */
+.high-contrast form button {
+    color: #000000 !important;
+}
+
+
+
+/* CORREÇÃO: Visibilidade dos cards de guias em alto contraste no hover */
+.high-contrast .card-guia:hover,
+.high-contrast .card-guia:hover h3,
+.high-contrast .card-guia:hover p {
+    color: #000000 !important; /* Texto preto no fundo amarelo do hover */
+}
+
+
+/* Estilos para o Modo Monocromático */
+body.monochrome > header,
+body.monochrome > main,
+body.monochrome > footer {
+    filter: grayscale(100%);
+}
+
+
+/* Estilos para Fonte de Dislexia */
+body.dyslexia-font {
+    --fonte-corpo: 'Lexend', sans-serif;
+}
+
 
 /* Reset e Estilos Globais */
 * {
@@ -72,44 +127,171 @@ section {
   transition: background-color 0.3s;
 }
 
-/* Estilos do Preloader */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1a202c;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+/* --- PAINEL DE ACESSIBILIDADE --- */
+.accessibility-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    border: none;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    transition: var(--transicao-padrao);
 }
-#preloader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-.loader {
-  animation: pulse 1.5s ease-in-out infinite;
+.accessibility-fab:hover {
+    transform: scale(1.1);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo-escuro);
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
+.accessibility-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 380px;
+    height: 100vh;
+    background-color: var(--cor-fundo-secao-alternativa);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+}
+.accessibility-panel.open {
+    transform: translateX(0);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--cor-texto-claro);
+}
+.panel-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+.panel-header #accessibility-panel-close {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+    cursor: pointer;
+}
+
+.panel-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.panel-section {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.panel-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--cor-principal);
+    font-family: var(--fonte-corpo);
+}
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+.button-group button {
+    flex-grow: 1;
+}
+.button-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.panel-section button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--raio-borda);
+    border: 2px solid var(--cor-principal);
+    background-color: transparent;
+    color: var(--cor-principal);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.panel-section button:hover, .panel-section button.active {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+}
+
+/* --- LEITOR DE TEXTO --- */
+.text-reader-controls {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-branco);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: var(--sombra-caixa);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.text-reader-controls button {
+    background: none;
+    border: none;
+    color: var(--cor-branco);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.text-reader-controls button:hover {
+    color: var(--cor-secundaria);
+}
+body.text-reader-active .readable-text {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+body.text-reader-active .readable-text:hover {
+    background-color: rgba(255, 200, 0, 0.3);
+}
+.reading-highlight {
+    background-color: rgba(0, 162, 255, 0.3) !important;
+    border-radius: 4px;
 }
 
 /* Header Fixo */
 .site-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centraliza o menu */
   align-items: center;
   padding: 1rem 2rem;
   background: rgba(26, 32, 44, 0.8);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
   width: 100%;
   border-bottom: 2px solid var(--cor-principal);
 }
@@ -127,27 +309,6 @@ section {
 .menu a:hover, .menu a.active {
   background: var(--cor-principal);
   transform: translateY(-2px);
-}
-
-.acessibilidade button {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background: var(--cor-principal);
-  color: var(--cor-branco);
-  cursor: pointer;
-  border-radius: 8px;
-  transition: var(--transicao-padrao);
-  width: 45px;
-  text-align: center;
-}
-
-.acessibilidade button:hover {
-  background: var(--cor-secundaria);
-  color: var(--cor-fundo-escuro);
-  transform: scale(1.05);
 }
 
 /* Banner Principal */
@@ -243,94 +404,6 @@ section {
 .sobre-texto { flex: 1.2; }
 .sobre-texto p { margin-bottom: 1rem; }
 
-/* Seção Destaques da Comunidade */
-.comunidade { background: transparent; }
-.grid-comunidade {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-.card-comunidade {
-    background: var(--cor-fundo-secao-alternativa);
-    border-radius: var(--raio-borda);
-    box-shadow: var(--sombra-caixa);
-    overflow: hidden;
-    transition: var(--transicao-padrao);
-}
-.card-comunidade:hover {
-    transform: translateY(-10px);
-}
-.card-comunidade img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-.card-comunidade-info {
-    padding: 1.5rem;
-}
-.card-comunidade-info h3 {
-    font-family: var(--fonte-titulo);
-    font-size: 1.8rem;
-    color: var(--cor-principal);
-    margin-bottom: 0.5rem;
-}
-
-/* Seção de Notícias */
-.noticias { background-color: var(--cor-fundo-secao-alternativa); }
-.grid-noticias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
-.card-noticia {
-    background: var(--cor-fundo);
-    border-radius: var(--raio-borda);
-    box-shadow: var(--sombra-caixa);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.card-noticia img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.card-noticia-body {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-.noticia-categoria {
-    background: var(--cor-principal);
-    color: var(--cor-branco);
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    align-self: flex-start;
-    margin-bottom: 1rem;
-}
-.card-noticia-body h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-}
-.card-noticia-body p {
-    margin-bottom: 1rem;
-    flex-grow: 1;
-}
-.ler-mais {
-    color: var(--cor-principal);
-    text-decoration: none;
-    font-weight: bold;
-    transition: var(--transicao-padrao);
-}
-.ler-mais:hover {
-    color: var(--cor-secundaria);
-    letter-spacing: 1px;
-}
-
 /* Seção de Guias */
 .guias { background: transparent; }
 .grid-guias {
@@ -389,7 +462,7 @@ section {
   box-shadow: var(--sombra-caixa);
   transition: var(--transicao-padrao);
   height: 350px;
-  transform-style: preserve-3d; /* Para o efeito tilt */
+  transform-style: preserve-3d;
 }
 .card-galeria:hover {
   transform: translateY(-10px) scale(1.03);
@@ -530,7 +603,13 @@ form input, form textarea {
 }
 form input:focus, form textarea:focus,
 form input:not(:placeholder-shown), form textarea:not(:placeholder-shown) {
-  outline: none;
+  border-color: var(--cor-principal);
+}
+form input:focus-visible,
+form textarea:focus-visible,
+form button:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
   border-color: var(--cor-principal);
 }
 form input:focus + label, form textarea:focus + label,
@@ -681,3 +760,16 @@ form button:hover {
   .footer-content { flex-direction: column; text-align: center; }
   .social-links { justify-content: center; }
 }
+
+@media (max-width: 480px) {
+    .accessibility-fab {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+    }
+    .accessibility-panel {
+        max-width: 100%;
+    }
+}
+
